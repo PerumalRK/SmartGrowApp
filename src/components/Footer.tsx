@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MapPin } from "lucide-react";
+import { Mail } from "lucide-react";
 import { Logo } from "./Logo";
 import { NAV, SERVICES, SITE } from "@/lib/site";
 
@@ -37,8 +37,6 @@ export function Footer() {
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Contact</h3>
           <address className="mt-4 space-y-3 text-sm not-italic">
-            <p className="flex gap-2.5"><MapPin size={18} className="mt-0.5 shrink-0 text-cyan" aria-hidden />
-              <span>{SITE.address.lines.map((l) => <span key={l} className="block">{l}</span>)}</span></p>
             {SITE.email ? (
               <p className="flex gap-2.5"><Mail size={18} className="shrink-0 text-cyan" aria-hidden />
                 <a href={`mailto:${SITE.email}`} className="hover:text-cyan">{SITE.email}</a></p>

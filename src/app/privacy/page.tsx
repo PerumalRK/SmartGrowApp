@@ -19,7 +19,7 @@ export default function PrivacyPage() {
         <h2 className="font-display text-2xl font-bold text-navy">Security and retention</h2>
         <p>We use secure, server-side processing and reasonable safeguards. We retain enquiry information only as long as needed to respond and to maintain business records.</p>
         <h2 className="font-display text-2xl font-bold text-navy">Third-party services</h2>
-        <p>Emails are sent using a transactional email provider, and this site embeds Google Maps on the Contact page, which may set its own cookies subject to Google&apos;s policies.</p>
+        <p>Enquiry emails are sent using a transactional email provider.</p>
         <h2 className="font-display text-2xl font-bold text-navy">Contact</h2>
         <p>For privacy questions, please use the Contact page.</p>
       </article>

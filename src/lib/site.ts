@@ -14,15 +14,6 @@ export const SITE = {
   tagline: "Turning Your Ideas Into Powerful Digital Solutions",
   description:
     "SmartGrowApp is a software development company in Chennai delivering custom software, web and mobile applications, ERP and CRM solutions, business automation, and Power BI analytics.",
-  address: {
-    lines: ["5D, S R Manasarovar Apartment", "Manapakkam Main Road", "Manapakkam, Chennai – 600125", "Tamil Nadu, India"],
-    street: "5D, S R Manasarovar Apartment, Manapakkam Main Road",
-    locality: "Chennai",
-    region: "Tamil Nadu",
-    postalCode: "600125",
-    country: "IN",
-  },
-  mapQuery: "S R Manasarovar Apartment, Manapakkam Main Road, Manapakkam, Chennai 600125",
 };
 
 export const NAV = [

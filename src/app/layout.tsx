@@ -36,14 +36,6 @@ const jsonLd = {
   description: SITE.description,
   areaServed: "IN",
   ...(SITE.email ? { email: SITE.email } : {}),
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: SITE.address.street,
-    addressLocality: SITE.address.locality,
-    addressRegion: SITE.address.region,
-    postalCode: SITE.address.postalCode,
-    addressCountry: SITE.address.country,
-  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

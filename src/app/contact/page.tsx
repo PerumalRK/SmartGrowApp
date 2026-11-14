@@ -1,19 +1,18 @@
 import type { Metadata } from "next";
-import { Clock, Mail, MapPin } from "lucide-react";
+import { Clock, Mail, MessageSquareText } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/ui";
 import { BUDGETS, CONTACT_METHODS, SERVICE_OPTIONS, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description: "Contact SmartGrowApp in Manapakkam, Chennai to discuss your software, web, mobile, automation or analytics project.",
+  description: "Contact SmartGrowApp to discuss your software, web, mobile, automation or analytics project.",
   alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage({ searchParams }: { searchParams: { service?: string } }) {
   const requested = typeof searchParams.service === "string" ? searchParams.service : "";
   const defaultService = SERVICE_OPTIONS.includes(requested) ? requested : "";
-  const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(SITE.mapQuery)}&output=embed`;
 
   return (
     <>
@@ -26,22 +25,20 @@ export default function ContactPage({ searchParams }: { searchParams: { service?
             <ContactForm services={SERVICE_OPTIONS} budgets={BUDGETS} methods={CONTACT_METHODS} defaultService={defaultService} />
           </div>
 
-          <aside className="space-y-6 lg:col-span-2">
+          <aside className="lg:col-span-2">
             <div className="rounded-3xl bg-navy p-8 text-white">
               <h2 className="font-display text-2xl font-bold">SmartGrowApp</h2>
-              <address className="mt-6 space-y-5 not-italic">
-                <p className="flex gap-3"><MapPin className="mt-1 shrink-0 text-cyan" size={20} aria-hidden />
-                  <span className="text-slate-200">{SITE.address.lines.map((l) => <span key={l} className="block">{l}</span>)}</span></p>
+              <p className="mt-3 text-slate-300">Tell us about your idea and we will help you shape the right solution.</p>
+              <ul className="mt-6 space-y-5">
+                <li className="flex gap-3"><MessageSquareText className="shrink-0 text-cyan" size={20} aria-hidden />
+                  <span className="text-slate-200">Share your requirements using the enquiry form.</span></li>
                 {SITE.email && (
-                  <p className="flex gap-3"><Mail className="shrink-0 text-cyan" size={20} aria-hidden />
-                    <a href={`mailto:${SITE.email}`} className="text-slate-200 hover:text-cyan">{SITE.email}</a></p>
+                  <li className="flex gap-3"><Mail className="shrink-0 text-cyan" size={20} aria-hidden />
+                    <a href={`mailto:${SITE.email}`} className="text-slate-200 hover:text-cyan">{SITE.email}</a></li>
                 )}
-                <p className="flex gap-3"><Clock className="shrink-0 text-cyan" size={20} aria-hidden />
-                  <span className="text-slate-200">We typically respond to enquiries promptly.</span></p>
-              </address>
-            </div>
-            <div className="overflow-hidden rounded-3xl border border-slate-200 shadow-card">
-              <iframe title="SmartGrowApp location on Google Maps" src={mapSrc} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="h-72 w-full border-0" />
+                <li className="flex gap-3"><Clock className="shrink-0 text-cyan" size={20} aria-hidden />
+                  <span className="text-slate-200">Our team will review your enquiry and get back to you shortly.</span></li>
+              </ul>
             </div>
           </aside>
         </div>

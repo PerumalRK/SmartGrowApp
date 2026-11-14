@@ -5,7 +5,7 @@ import { INDUSTRIES, TECH_GROUPS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: "Learn about SmartGrowApp, a Chennai-based custom software development company and long-term technology partner for growing businesses.",
+  description: "Learn about SmartGrowApp, a custom software development company and long-term technology partner for growing businesses.",
   alternates: { canonical: "/about" },
 };
 
@@ -26,7 +26,7 @@ export default function AboutPage() {
           <div>
             <h2 className="font-display text-3xl font-extrabold tracking-tight text-navy">Who we are</h2>
             <p className="mt-5 text-lg leading-relaxed text-slate-600">
-              SmartGrowApp is a software development and IT solutions company based in Chennai, India. We specialize in
+              SmartGrowApp is a software development and IT solutions company. We specialize in
               customized software built around individual customer requirements, from websites and web applications to
               enterprise systems, business automation and data analytics.
             </p>

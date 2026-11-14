@@ -16,7 +16,7 @@ export default function HomePage() {
         <div className="container-x relative grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-2 lg:py-28">
           <div className="animate-fade-up">
             <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-medium text-cyan">
-              <span className="h-2 w-2 rounded-full bg-cyan" aria-hidden /> Software Development Company in Chennai
+              <span className="h-2 w-2 rounded-full bg-cyan" aria-hidden /> Custom Software Development Company
             </p>
             <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
               Turning Your Ideas Into <span className="bg-gradient-to-r from-royal via-cyan to-cyan bg-clip-text text-transparent">Powerful Digital Solutions</span>

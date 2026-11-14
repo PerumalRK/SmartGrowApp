@@ -13,7 +13,7 @@ export const SITE = {
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
   tagline: "Turning Your Ideas Into Powerful Digital Solutions",
   description:
-    "SmartGrowApp is a software development company in Chennai delivering custom software, web and mobile applications, ERP and CRM solutions, business automation, and Power BI analytics.",
+    "SmartGrowApp is a software development company delivering custom software, web and mobile applications, ERP and CRM solutions, business automation, and Power BI analytics.",
 };
 
 export const NAV = [

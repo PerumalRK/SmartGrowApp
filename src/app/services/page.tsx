@@ -6,7 +6,7 @@ import { SERVICES } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services",
-  description: "Custom software, website, web and mobile application development, ERP and CRM, business automation, Power BI analytics, reporting and AI solutions from SmartGrowApp, Chennai.",
+  description: "Custom software, website, web and mobile application development, ERP and CRM, business automation, Power BI analytics, reporting and AI solutions from SmartGrowApp.",
   alternates: { canonical: "/services" },
 };
 

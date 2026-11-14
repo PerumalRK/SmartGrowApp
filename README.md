@@ -1,6 +1,6 @@
 # SmartGrowApp Website
 
-Premium corporate website for **SmartGrowApp**, a software development company in Chennai.
+Premium corporate website for **SmartGrowApp**, a software development company.
 Built with Next.js 14 (App Router), TypeScript, Tailwind CSS, Lucide icons and Resend for enquiry emails.
 
 ## Features

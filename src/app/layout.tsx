@@ -13,15 +13,15 @@ export const viewport: Viewport = { themeColor: "#101B3F", width: "device-width"
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "SmartGrowApp | Software Development Company in Chennai",
+    default: "SmartGrowApp | Custom Software Development Company",
     template: "%s | SmartGrowApp",
   },
   description: SITE.description,
-  keywords: ["Software Development Company in Chennai", "Custom Software Development", "Web Application Development", "Mobile Application Development", "ERP Software Development", "CRM Development", "Business Automation Solutions", "Power BI and Data Analytics"],
+  keywords: ["Software Development Company","Custom Software Development", "Web Application Development", "Mobile Application Development", "ERP Software Development", "CRM Development", "Business Automation Solutions", "Power BI and Data Analytics"],
   alternates: { canonical: "/" },
   openGraph: {
     type: "website", siteName: SITE.name, locale: "en_IN", url: "/",
-    title: "SmartGrowApp | Custom Software Development in Chennai",
+    title: "SmartGrowApp | Custom Software Development",
     description: SITE.description,
   },
   twitter: { card: "summary_large_image", title: "SmartGrowApp | Custom Software Development", description: SITE.description },

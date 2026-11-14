@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import { mailConfigured, sendMail } from "@/lib/mail";
 import { buildEmail, fingerprint, forgetFingerprint, isDuplicate, rateLimited, validateEnquiry } from "@/lib/contact";
 
 export const runtime = "nodejs";
@@ -47,16 +47,14 @@ export async function POST(req: Request) {
     return json({ ok: false, message: "This enquiry was already submitted. We will be in touch shortly." }, 409);
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL;
-  const from = process.env.CONTACT_FROM_EMAIL;
+  const to = process.env.CONTACT_TO_EMAIL || "";
   const submittedAt = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata", dateStyle: "full", timeStyle: "long" });
 
   // Always preserve the enquiry in server logs (Vercel Runtime Logs) in case delivery fails.
   const preserve = (reason: string) =>
     console.error("[contact] ENQUIRY NOT EMAILED:", reason, JSON.stringify({ submittedAt, ...data }));
 
-  if (!apiKey || !to || !from) {
+  if (!mailConfigured()) {
     preserve("missing email configuration");
     forgetFingerprint(fp);
     return json({ ok: false, message: "Our enquiry service is temporarily unavailable. Please try again later." }, 503);
@@ -64,16 +62,13 @@ export async function POST(req: Request) {
 
   try {
     const { html, text } = buildEmail(data, submittedAt);
-    const resend = new Resend(apiKey);
-    const { error } = await resend.emails.send({
-      from,
+    await sendMail({
       to: to.split(",").map((s) => s.trim()).filter(Boolean),
       replyTo: data.email,
       subject: `New Enquiry: ${data.service} – ${data.name}`,
       html,
       text,
     });
-    if (error) throw new Error(error.message);
     return json({ ok: true });
   } catch (err) {
     preserve(err instanceof Error ? err.message : "unknown error");

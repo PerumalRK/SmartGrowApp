@@ -25,9 +25,9 @@ npm run build && npm start      # production check
 ## Environment variables
 | Variable | Required | Purpose |
 |---|---|---|
-| `RESEND_API_KEY` | yes | Resend API key (server only) |
 | `CONTACT_TO_EMAIL` | yes | Recipient of enquiries (comma-separate for several) |
-| `CONTACT_FROM_EMAIL` | yes | Verified sender, e.g. `SmartGrowApp <no-reply@yourdomain.com>` |
+| `SMTP_USER` / `SMTP_PASS` | option 1 | Send from a Gmail account; `SMTP_PASS` is a Google App Password |
+| `RESEND_API_KEY` / `CONTACT_FROM_EMAIL` | option 2 | Resend (needs a verified domain; cannot send from @gmail.com). Used only if SMTP vars are unset |
 | `NEXT_PUBLIC_SITE_URL` | yes (prod) | Public URL, used for canonical/sitemap/OG |
 | `NEXT_PUBLIC_CONTACT_EMAIL` | no | Email displayed on the site; hidden if blank |
 

@@ -37,7 +37,7 @@ Never commit `.env*` files (already git-ignored except `.env.example`).
 ```bash
 git init && git add . && git commit -m "Initial SmartGrowApp website"
 git branch -M main
-git remote add origin https://github.com/<your-username>/<repo>.git
+git remote add origin https://github.com/PerumalRK/SmartGrowApp.git
 git push -u origin main
 ```
 

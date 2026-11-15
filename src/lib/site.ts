@@ -9,7 +9,10 @@ import {
 
 export const SITE = {
   name: "SmartGrowApp",
-  url: (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/$/, ""),
+  url: (
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    (process.env.NODE_ENV === "production" ? "https://www.smartgrowapp.in" : "http://localhost:3000")
+  ).replace(/\/$/, ""),
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
   tagline: "Turning Your Ideas Into Powerful Digital Solutions",
   description:

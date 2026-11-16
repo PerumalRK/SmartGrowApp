@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: { card: "summary_large_image", title: "SmartGrowApp | Custom Software Development", description: SITE.description },
   robots: { index: true, follow: true },
+  verification: { google: "dRZLPT-aX-EL0dHt9kHtqxVZD1K39Z7tIJf0ibqFBJk" },
 };
 
 const jsonLd = {
